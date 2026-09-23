@@ -74,6 +74,31 @@ textarea {
   font: inherit;
 }
 
+.skip-link {
+  text-decoration: none;
+  position: absolute;
+  top: -100px;
+  left: 10px;
+  color: #000;
+  background: #FFF;
+  padding: 10px 13px;
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.015em;
+  box-shadow: 0 5px 10px rgba(0,0,0,.35);
+  transition: all ease .3s;
+  &:focus, &:active {
+    position: fixed;
+    z-index: 999999999999;
+    top: 10px
+  }
+  &:focus {
+    outline: 2px solid #000;
+    outline-offset: -2px;
+  }
+}
+
 .container {
   width: min(100% - 2rem, var(--max-width));
   margin-inline: auto;
