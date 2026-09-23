@@ -121,7 +121,8 @@ textarea {
   font-weight: 500;
   line-height: 1.5;
   text-align: center;
-  padding: .65rem 3rem;
+  padding: .65rem 2rem;
+  padding-right: 5rem;
   position: relative;
   min-height: 50px;
 }
@@ -208,11 +209,13 @@ textarea {
       justify-content: center;
       gap: 1.5rem;
 
-      .nav-item {
+      .nav-item-link {
         display: block;
+        width: 100%;
         text-decoration: none;
         appearance: none;
         border: none;
+        background-color: transparent;
         cursor: pointer;
         color: var(--white);
         font-size: 20px;
@@ -222,36 +225,129 @@ textarea {
         text-shadow: 0 1px 2px rgba(0, 0, 0, 0.75);
         transition: @transition;
         padding: 15px 18px;
-
+        text-align: left;
         &:hover,
         &:focus {
           outline: none;
+        }
+        @media screen and (min-width: @desktop-min-width) {
+          text-align: center;
         }
       }
 
       > li {
         &:hover,
         &:focus-within {
-          .nav-item {
+          .nav-item-link {
             background-color: rgba(0, 0, 0, 0.5);
             color: #fff;
           }
         }
 
-        &:focus-within .nav-item {
+        &:focus-within .nav-item-link {
           outline: 2px solid #fff;
           outline-offset: -2px;
         }
       }
     }
   }
+
+  @media screen and (min-width: (@ipad-width + 1)) {
+    .main-nav .main-nav__links > li {
+      position: relative;
+    }
+
+    .sub-nav-folder {
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      z-index: 20;
+      min-width: 220px;
+      margin: 0;
+      padding: 0;
+      background: #fff;
+      border-radius: 0 0 10px 10px;
+      box-shadow: 0 10px 24px fade(#000, 18%);
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transform: translateX(-50%) translateY(4px);
+      transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease;
+
+      ul.sub-nav {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        gap: 0;
+        list-style: none;
+        margin: 0;
+        padding: 0.5rem 0;
+  
+        > li {
+          width: 100%;
+          border: none;
+          text-align: left;
+          font-size: 16px;
+          padding: 0 10px;
+        }
+
+        .sub-nav-item {
+          display: block;
+          min-width: 250px;
+          border-radius: 6px;
+          padding: 0.5rem 1rem;
+          color: var(--primary);
+          font-size: 18px;
+          font-weight: 500;
+          text-decoration: none;
+          text-transform: none;
+          letter-spacing: 0.015em;
+          text-shadow: none;
+          transition: @transition;
+    
+          &:hover, &:focus, &:focus-visible {
+            background: var(--secondary);
+            color: #000;
+          }
+    
+          &:focus,
+          &:focus-visible {
+            outline: 2px solid var(--primary);
+            outline-offset: 2px;
+          }
+        }
+      }
+    }
+
+    .main-nav .main-nav__links > li:hover .sub-nav-folder,
+    .main-nav .main-nav__links > li:focus-within .sub-nav-folder,
+    .main-nav .main-nav__links > li.nav-item-has-folder.is-open .sub-nav-folder {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      transform: translateX(-50%) translateY(0);
+    }
+
+  }
 }
 
-.site-header__logo img {
-  height: 75px;
-  width: auto;
-  @media screen and (max-width: @mobile-width) {
-    height: 60px;
+.site-header__logo {
+  display: inline-block;
+  text-decoration: none;
+  transition: @transition;
+  img {
+    height: 75px;
+    width: auto;
+    @media screen and (max-width: @mobile-width) {
+      height: 60px;
+    }
+  }
+  &:hover, &:focus {
+    transform: translateY(-2px);
+  }
+  &:focus, &:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
   }
 }
 
@@ -403,6 +499,45 @@ textarea {
       }
     }
 
+    .sub-nav-container {
+      position: static;
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      transform: none;
+      min-width: 0;
+      margin: 0;
+      background: fade(#000, 22%);
+      border-radius: 0;
+      box-shadow: none;
+    }
+
+    .sub-nav {
+      list-style: none;
+      margin: 0;
+      padding: 0 0 0.5rem;
+    }
+
+    .sub-nav-item {
+      display: block;
+      padding: 0.625rem 1rem 0.625rem 1.5rem;
+      color: #fff;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      text-decoration: none;
+      text-transform: none;
+
+      &:hover {
+        background: fade(#000, 25%);
+      }
+
+      &:focus,
+      &:focus-visible {
+        outline: 2px solid #fff;
+        outline-offset: -2px;
+      }
+    }
+
     .site-header__social:empty {
       display: none;
     }
@@ -431,6 +566,74 @@ textarea {
             outline-color: #fff;
           }
         }
+      }
+    }
+
+    .sub-nav-folder {
+      display: none;
+      background: fade(#000, 22%);
+      margin: 0;
+      padding: 0 0 0.5rem;
+    }
+
+    .nav-item-has-folder.is-open .sub-nav-folder {
+      display: block;
+    }
+
+    .nav-item-link.nav-folder-toggle {
+      position: relative;
+      padding-right: 50px;
+
+      &:after {
+        content: "";
+        display: block;
+        width: 50px;
+        height: 100%;
+        background-image: url("https://lisacommando.github.io/stellar-utah/assets/img/chevron-down.svg");
+        background-size: 25px;
+        background-position: center;
+        background-repeat: no-repeat;
+        position: absolute;
+        right: 0;
+        top: 0;
+        filter: invert(1);
+        transition: transform 0.2s ease;
+      }
+
+      &[aria-expanded="true"] {
+        &:after {
+          transform: scaleY(-1);;
+        }
+      }
+    }
+
+    .nav-item-has-folder.is-open .nav-folder-toggle:after {
+      transform: rotate(180deg);
+    }
+
+    .sub-nav {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .sub-nav-item {
+      display: block;
+      padding: 0.625rem 1rem 0.625rem 1.5rem;
+      color: #fff;
+      font-size: 18px;
+      font-weight: 500;
+      text-decoration: none;
+      text-transform: none;
+
+      &:hover, &:focus {
+        background: var(--secondary);
+        color: #000;
+      }
+
+      &:focus, &:focus-visible {
+        outline: 2px solid #FFF;
+        outline-offset: -2px;
       }
     }
 
