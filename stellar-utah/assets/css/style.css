@@ -833,7 +833,8 @@ textarea {
   text-decoration: none;
   color: inherit;
   transition: all 0.3s ease;
-  background: var(--rates-bg);
+  background-color: #FFF;
+  background-image: linear-gradient(to bottom left, transparent, #dde6f3);
 }
 @media screen and (min-width: 1251px) {
   .rate-card .rate-card__link {

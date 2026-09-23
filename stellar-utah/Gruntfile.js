@@ -3,13 +3,13 @@ module.exports = function (grunt) {
     less: {
       compile: {
         files: {
-          "css/style.css": "css/style.less",
+          "assets/css/style.css": "assets/css/style.less",
         },
       },
     },
     watch: {
       less: {
-        files: ["css/**/*.less"],
+        files: ["assets/css/**/*.less"],
         tasks: ["less"],
       },
     },
