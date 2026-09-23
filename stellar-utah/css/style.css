@@ -557,10 +557,10 @@ textarea {
   background-size: 90%;
 }
 .mobile-app-badges a.app-badge--apple:before {
-  background-image: url("/assets/img/apple-store-white.png");
+  background-image: url("https://lisacommando.github.io/stellar-utah/assets/img/apple-store-white.png");
 }
 .mobile-app-badges a.app-badge--google:before {
-  background-image: url("/assets/img/google-play-white.png");
+  background-image: url("https://lisacommando.github.io/stellar-utah/assets/img/google-play-white.png");
 }
 .mobile-app-badges a:hover,
 .mobile-app-badges a:focus {
@@ -576,10 +576,10 @@ textarea {
   color: #000;
 }
 .mobile-app-badges._light-mode a.app-badge--apple:before {
-  background-image: url("/assets/img/apple-store-dark.png");
+  background-image: url("https://lisacommando.github.io/stellar-utah/assets/img/apple-store-dark.png");
 }
 .mobile-app-badges._light-mode a.app-badge--google:before {
-  background-image: url("/assets/img/google-play-dark.png");
+  background-image: url("https://lisacommando.github.io/stellar-utah/assets/img/google-play-dark.png");
 }
 .mobile-app-badges._light-mode a:focus {
   outline: 2px solid #FFF;
