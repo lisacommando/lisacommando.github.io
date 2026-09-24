@@ -7,13 +7,14 @@
 @white: #ffffff;
 @online-banking-header: #c5dce8;
 @rates-bg: #f3f4f6;
-@max-width: 1200px;
+@max-width: 1700px;
 @font-heading: "Montserrat", system-ui, -apple-system, sans-serif;
 @font-body: "Open Sans", system-ui, -apple-system, sans-serif;
 @transition: all 0.3s ease;
 @desktop-min-width: 1251px;
 @ipad-width: 1250px;
 @mobile-width: 768px;
+@sidebar-nav-dropdown-width: 960px;
 
 :root {
   --primary: @primary;
@@ -1261,6 +1262,188 @@ textarea {
   font-weight: 400;
   line-height: 1.5;
   text-shadow: 0 3px 5px rgba(0,0,0,.5);
+}
+
+/* Internal */
+.entry-content-wrapper {
+  display: grid;
+  grid-template-columns: minmax(300px, 300px) minmax(0, 1fr);
+  gap: 2.5rem;
+  align-items: start;
+  max-width: @max-width;
+  margin-inline: auto;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+
+  @media screen and (max-width: @sidebar-nav-dropdown-width) {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+.sidebar-navigation {
+  position: sticky;
+  top: 1.5rem;
+  min-width: 300px;
+
+  @media screen and (max-width: @sidebar-nav-dropdown-width) {
+    position: static;
+    min-width: 0;
+  }
+
+  &:empty {
+    display: none;
+  }
+}
+
+.sidebar-navigation__nav {
+  border: 1px solid fade(@primary, 35%);
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--white);
+  box-shadow: 0 4px 14px fade(#000, 8%);
+
+  @media screen and (max-width: @sidebar-nav-dropdown-width) {
+    border: none;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+  }
+}
+
+.sidebar-navigation__toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0;
+  padding: 0.85rem 1rem;
+  border: none;
+  background: var(--primary);
+  color: var(--white);
+  font-family: var(--font-heading);
+  font-size: 1.125rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-radius: 10px 10px 0 0;
+  cursor: pointer;
+  transition: @transition;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--white);
+    outline-offset: 2px;
+  }
+
+  @media screen and (max-width: @sidebar-nav-dropdown-width) {
+    border-radius: 10px;
+  }
+}
+
+.sidebar-navigation__toggle-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+
+  i {
+    font-size: 1rem;
+    line-height: 1;
+  }
+}
+
+.sidebar-navigation__toggle-icon {
+  font-size: 0.875rem;
+  line-height: 1;
+  transition: transform 0.25s ease;
+
+  @media screen and (min-width: (@sidebar-nav-dropdown-width + 1)) {
+    display: none;
+  }
+}
+
+.sidebar-navigation__panel {
+  @media screen and (max-width: @sidebar-nav-dropdown-width) {
+    display: none;
+    border: 1px solid fade(@primary, 35%);
+    border-top: none;
+    border-radius: 0 0 10px 10px;
+    background: var(--white);
+    box-shadow: 0 8px 16px fade(#000, 10%);
+  }
+}
+
+.sidebar-navigation--open {
+  @media screen and (max-width: @sidebar-nav-dropdown-width) {
+    .sidebar-navigation__toggle {
+      border-radius: 10px 10px 0 0;
+    }
+
+    .sidebar-navigation__panel {
+      display: block;
+    }
+
+    .sidebar-navigation__toggle-icon {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+.sidebar-navigation__list {
+  list-style: none;
+  margin: 0;
+  padding: 0.75rem 0;
+}
+
+.sidebar-navigation__link {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: var(--primary);
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.35;
+  text-decoration: none;
+  transition: @transition;
+
+  &:hover {
+    background: fade(@primary, 8%);
+  }
+
+  &:focus,
+  &:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: -2px;
+    background: fade(@primary, 8%);
+  }
+}
+
+.entry-content {
+  min-width: 0;
+
+  h2 {
+    margin: 0 0 1rem;
+    color: var(--primary);
+    font-size: clamp(1.75rem, 3vw, 2.25rem);
+    font-weight: 700;
+    line-height: 1.2;
+    scroll-margin-top: 7rem;
+  }
+
+  hr {
+    margin: 2rem 0;
+    border: 0;
+    border-top: 1px solid #d1d5db;
+  }
+
+  p {
+    margin: 0 0 1rem;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--text-dark);
+  }
 }
 
 /* Footer */
