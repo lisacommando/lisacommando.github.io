@@ -1,0 +1,17 @@
+node_modules/
+./node_modules
+_bak/
+./_bak
+.DS_Store
+stellar-CA/node_modules/
+stellar-FL/node_modules/
+stellar-NY/node_modules/
+stellar-TN/node_modules/
+stellar-TX/node_modules/
+stellar-UT/node_modules/
+stellar-CA/.DS_Store
+stellar-FL/.DS_Store
+stellar-NY/.DS_Store
+stellar-TN/.DS_Store
+stellar-TX/.DS_Store
+stellar-UT/.DS_Store
