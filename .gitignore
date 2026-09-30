@@ -3,6 +3,7 @@ node_modules/
 _bak/
 ./_bak
 .DS_Store
+.DS_Store/
 stellar-CA/node_modules/
 stellar-FL/node_modules/
 stellar-NY/node_modules/

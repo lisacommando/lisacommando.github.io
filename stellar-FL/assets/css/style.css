@@ -577,7 +577,7 @@ textarea {
     display: block;
     width: 50px;
     height: 100%;
-    background-image: url("https://lisacommando.github.io/assets/img/chevron-down.svg");
+    background-image: url("https://lisacommando.github.io/stellar-FL/assets/img/chevron-down.svg");
     background-size: 25px;
     background-position: center;
     background-repeat: no-repeat;
@@ -813,10 +813,10 @@ textarea {
   background-size: 90%;
 }
 .mobile-app-badges a.app-badge--apple:before {
-  background-image: url("https://lisacommando.github.io/assets/img/apple-store-white.png");
+  background-image: url("https://lisacommando.github.io/stellar-FL/assets/img/apple-store-white.png");
 }
 .mobile-app-badges a.app-badge--google:before {
-  background-image: url("https://lisacommando.github.io/assets/img/google-play-white.png");
+  background-image: url("https://lisacommando.github.io/stellar-FL/assets/img/google-play-white.png");
 }
 .mobile-app-badges a:hover,
 .mobile-app-badges a:focus {
@@ -832,10 +832,10 @@ textarea {
   color: #000;
 }
 .mobile-app-badges._light-mode a.app-badge--apple:before {
-  background-image: url("https://lisacommando.github.io/assets/img/apple-store-dark.png");
+  background-image: url("https://lisacommando.github.io/stellar-FL/assets/img/apple-store-dark.png");
 }
 .mobile-app-badges._light-mode a.app-badge--google:before {
-  background-image: url("https://lisacommando.github.io/assets/img/google-play-dark.png");
+  background-image: url("https://lisacommando.github.io/stellar-FL/assets/img/google-play-dark.png");
 }
 .mobile-app-badges._light-mode a:focus {
   outline: 2px solid #FFF;
