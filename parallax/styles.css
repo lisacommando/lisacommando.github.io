@@ -506,6 +506,38 @@ em { font-style: italic; }
 }
 .trip.is-active::after { opacity: 1; }
 
+/* Closed panels: a short title pinned to the bottom, over a dark fade so it
+   reads on any photo. It hides while the panel is open (the full content
+   shows instead) and fades back in once the panel has closed. */
+.trip::before {
+  content: "";
+  position: absolute;
+  inset: 40% 0 0;
+  z-index: 1;
+  background: linear-gradient(180deg, rgba(10, 14, 20, 0) 0%, rgba(10, 14, 20, 0.55) 100%);
+  transition: opacity 0.5s ease;
+}
+.trip__label {
+  position: absolute;
+  z-index: 2;
+  left: clamp(12px, 1.4vw, 20px);
+  right: clamp(12px, 1.4vw, 20px);
+  bottom: clamp(16px, 2vw, 28px);
+  margin: 0;
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: clamp(0.9rem, 1.2vw, 1.1rem);
+  line-height: 1.35;
+  color: #fff;
+  text-shadow: 0 1px 8px rgba(10, 14, 20, 0.4);
+  transition: opacity 0.4s ease 0.4s;
+}
+.trip.is-active::before,
+.trip.is-active .trip__label {
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
 /* Content has a fixed width so it never reflows while the panel resizes */
 .trip__content {
   text-shadow: 0 1px 12px rgba(10, 14, 20, 0.35);
@@ -641,6 +673,7 @@ em { font-style: italic; }
   .trips__panels { flex-direction: column; height: 88vh; }
   .trip.is-active { flex-grow: 6; }
   .trip__content { width: 100%; }
+  .trip__label br { display: none; } /* strips are wide but short on phones */
 
   /* Cards stack on phones, middle card first */
   .intro__cards { flex-direction: column; }
@@ -657,6 +690,6 @@ em { font-style: italic; }
   .hero { height: auto; }
   .hero__mist { display: none; }
   .camp__body > * { transition: none; }
-  .trip, .trip__img, .trip::after, .trip__content > * { transition: none !important; }
+  .trip, .trip__img, .trip::before, .trip::after, .trip__label, .trip__content > * { transition: none !important; }
   .icard { transition: none; }
 }
