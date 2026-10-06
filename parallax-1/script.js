@@ -10,13 +10,6 @@
   const countEl = document.querySelector(".js-count");
   const barEl = document.querySelector(".js-bar");
   const speedEls = [...document.querySelectorAll("[data-speed]")];
-  const hero = document.querySelector(".hero");
-  const heroContent = document.querySelector(".hero__content");
-  const cloudFront = document.querySelector(".hero__cloud--front");
-  const cloudBack = document.querySelector(".hero__cloud--back");
-  const mist = document.querySelector(".hero__mist");
-  const scrollHint = document.querySelector(".hero__scroll");
-  const introCards = [...document.querySelectorAll(".icard")];
 
   let vw = window.innerWidth;
   let vh = window.innerHeight;
@@ -72,8 +65,6 @@
 
     // Vertical parallax for hero / breaker layers.
     if (!reduceMotion) {
-      renderHero();
-      renderIntroCards();
       speedEls.forEach((el) => {
         const r = el.parentElement.getBoundingClientRect();
         if (r.bottom < 0 || r.top > vh) return;
@@ -87,54 +78,6 @@
     } else {
       running = false;
     }
-  }
-
-  // Hero timeline, measured in screens scrolled (0 = top, 1 = one full screen).
-  // The hero is two screens tall, so its stage stays pinned until 1.
-  function renderHero() {
-    const rect = hero.getBoundingClientRect();
-    if (rect.bottom < 0) return;
-    const p = clamp(-rect.top / vh, 0, 2);
-    const t = (from, to) => clamp((p - from) / (to - from), 0, 1);
-
-    // Clouds rise from below at different speeds for depth.
-    // cloudFront.style.transform = `translate3d(-50%, ${58 - 62 * t(0, 1.5)}%, 0)`;
-    cloudFront.style.transform = `translate3d(-50%, ${100 - 80 * t(0, 1.5)}%, 0)`;
-    cloudBack.style.transform = `translate3d(-50%, ${100 - 50 * t(0, 1.5)}%, 0) scaleX(-1)`;
-
-    // Mist curtain stands up from the bottom edge, like a card hinged at its
-    // base flipping upright, between 0.8 and 1.5 screens of scroll.
-    const lift = Math.sin(t(0.8, 1.5) * Math.PI / 2);
-    mist.style.transform = `translate3d(-50%, 0, 0) scaleY(${lift})`;
-
-    // Headline drifts up and fades as the clouds roll in.
-    heroContent.style.transform = `translate3d(0, ${-p * 22}vh, 0)`;
-    heroContent.style.opacity = 1 - t(0.3, 0.9);
-
-    scrollHint.style.opacity = 1 - t(0, 0.2);
-  }
-
-  // Intro cards: each animates on its own from the moment its top enters the
-  // viewport until it is 40% of the way up. Left slides in from the left,
-  // right from the right, and the middle zooms in (grows) to its resting size.
-  function renderIntroCards() {
-    introCards.forEach((card) => {
-      // Measure without the card's own transform so it doesn't affect timing.
-      const top = card.offsetParent.getBoundingClientRect().top + card.offsetTop;
-      const p = clamp((vh - top) / (vh * 0.4), 0, 1);
-      const e = 1 - Math.pow(1 - p, 3); // ease-out
-
-      let transform;
-      if (card.classList.contains("icard--left")) {
-        transform = `translate3d(${(1 - e) * -140}px, 0, 0)`;
-      } else if (card.classList.contains("icard--right")) {
-        transform = `translate3d(${(1 - e) * 140}px, 0, 0)`;
-      } else {
-        transform = `scale(${1 - (1 - e) * 0.2})`;
-      }
-      card.style.transform = transform;
-      card.style.opacity = 0.1 + e * 0.9;
-    });
   }
 
   function start() {

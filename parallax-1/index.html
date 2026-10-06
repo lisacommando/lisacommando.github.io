@@ -6,7 +6,7 @@
   <title>Polar Horizon</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -20,81 +20,28 @@
     </nav>
   </header>
 
-  <!-- Recolours the white cloud.png to the exact page colour (#f4f1ec), keeping
-       its transparency, and softens the banding in the 16-colour PNG -->
-  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
-    <filter id="cloud-tint" color-interpolation-filters="sRGB">
-      <feGaussianBlur stdDeviation="6" />
-      <feColorMatrix type="matrix" values="0 0 0 0 0.957  0 0 0 0 0.945  0 0 0 0 0.925  0 0 0 1 0" />
-    </filter>
-  </svg>
-
-  <!-- HERO: the video stays pinned for one screen of scrolling while clouds drift
-       up over it, then a mist curtain rises and hands over to the intro -->
+  <!-- HERO: vertical parallax layers -->
   <section class="hero">
-    <div class="hero__pin">
-      <!-- Poster image shows until the YouTube video starts playing -->
-      <div class="hero__bg hero__bg--video" data-youtube="EColTNIbOko"
-           style="background-image:url('https://i.ytimg.com/vi/EColTNIbOko/maxresdefault.jpg')">
-        <div class="hero__video"><div id="hero-video"></div></div>
-      </div>
-      <div class="hero__shade"></div>
-      <div class="hero__content">
-        <p class="eyebrow">Expeditions to the edge of the world</p>
-        <h1 class="hero__title">Where the map<br /><em>runs out</em></h1>
-      </div>
-      <div class="hero__cloud hero__cloud--back" aria-hidden="true"><img src="cloud1.png" alt="" /></div>
-      <div class="hero__cloud hero__cloud--front" aria-hidden="true"><img src="cloud2.png" alt="" /></div>
-      <div class="hero__mist" aria-hidden="true"><img src="cloud3.png" alt="" /></div>
-      <div class="hero__scroll">Scroll</div>
+    <!-- Poster image shows until the YouTube video starts playing -->
+    <div class="hero__bg hero__bg--video" data-speed="0.4" data-youtube="EColTNIbOko"
+         style="background-image:url('https://i.ytimg.com/vi/EColTNIbOko/maxresdefault.jpg')">
+      <div class="hero__video"><div id="hero-video"></div></div>
     </div>
+    <div class="hero__shade"></div>
+    <div class="hero__content" data-speed="-0.15">
+      <p class="eyebrow">Expeditions to the edge of the world</p>
+      <h1 class="hero__title">Where the map<br /><em>runs out</em></h1>
+    </div>
+    <div class="hero__scroll">Scroll</div>
   </section>
 
   <!-- INTRO -->
   <section class="intro" id="about">
-    <div class="intro__inner">
-      <p class="eyebrow">Since 2006</p>
-      <p class="intro__text">
-        Five remote camps, each set against a landscape few people will ever see.
-        Scroll down to travel east across the ice.
-      </p>
-    </div>
-
-    <!-- Each card animates in on its own as it scrolls into view (see script.js) -->
-    <div class="intro__cards">
-      <article class="icard icard--left">
-        <img class="icard__img" src="https://images.unsplash.com/photo-1520769945061-0a448c463865?w=900&q=80" alt="Rocky island in a still mountain lake" />
-        <h3 class="icard__title">Plan your<br />journey</h3>
-        <div class="icard__pill">
-          <span class="icard__icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9" /><path d="m15.5 8.5-2 5-5 2 2-5z" /></svg>
-          </span>
-          <p>Routes shaped around you<br />by our polar specialists</p>
-        </div>
-      </article>
-
-      <article class="icard icard--center">
-        <img class="icard__img" src="https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1100&q=80" alt="Milky Way over snowy mountains" />
-        <h3 class="icard__title">Travel to the<br />edge of the world</h3>
-        <div class="icard__pill">
-          <span class="icard__icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 5 6v5c0 4.5 3 8.5 7 10 4-1.5 7-5.5 7-10V6z" /><path d="m9 12 2 2 4-4" /></svg>
-          </span>
-          <p>Expert guides and full safety<br />support on every expedition</p>
-        </div>
-      </article>
-
-      <article class="icard icard--right">
-        <img class="icard__img" src="https://images.unsplash.com/photo-1551582045-6ec9c11d8697?w=900&q=80" alt="Snowy village street at night" />
-        <h3 class="icard__title">Stay in<br />comfort</h3>
-        <div class="icard__pill">
-          <span class="icard__icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20 12 4l9 16z" /><path d="M10 20l2-4 2 4" /></svg>
-          </span>
-          <p>Heated domes, fine dining<br />and a warm welcome</p>
-        </div>
-      </article>
-    </div>
+    <p class="eyebrow">Since 2006</p>
+    <p class="intro__text">
+      Five remote camps, each set against a landscape few people will ever see.
+      Scroll down to travel east across the ice.
+    </p>
   </section>
 
   <!-- OUR CAMPS: vertical scroll drives horizontal movement -->

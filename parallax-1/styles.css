@@ -1,6 +1,5 @@
 :root {
   --bg: #f4f1ec;
-  --bg-rgb: 244, 241, 236;
   --ink: #16191d;
   --muted: #6b6f75;
   --dark: #0f1418;
@@ -9,7 +8,6 @@
   --serif: "Cormorant Garamond", Georgia, serif;
   --sans: "Inter", system-ui, -apple-system, sans-serif;
   --gutter: clamp(16px, 4vw, 64px);
-  --accent: #1d5fa8;
 }
 
 *,
@@ -39,13 +37,6 @@ em { font-style: italic; }
   text-transform: uppercase;
 }
 
-.intro__text {
-  margin: 0;
-  font-family: var(--serif);
-  font-size: clamp(1.6rem, 3.6vw, 3rem);
-  line-height: 1.2;
-}
-
 /* ---------- Nav ---------- */
 .nav {
   position: fixed;
@@ -71,23 +62,14 @@ em { font-style: italic; }
 }
 
 /* ---------- Hero ---------- */
-/* Two screens tall: the pinned stage holds still for the first screen of
-   scrolling while the clouds and mist animate over it (see script.js) */
 .hero {
   position: relative;
-  height: 200vh;
-  height: 200svh;
-  color: var(--light);
-}
-.hero__pin {
-  position: sticky;
-  top: 0;
   height: 100vh;
-  height: 100svh;
   min-height: 560px;
   overflow: hidden;
   display: grid;
   place-items: center;
+  color: var(--light);
   background: var(--dark);
 }
 .hero__bg,
@@ -98,7 +80,6 @@ em { font-style: italic; }
   background-position: center;
   will-change: transform;
 }
-.hero__bg { inset: 0; }
 /* YouTube background video, sized to cover like background-size: cover */
 .hero__bg--video {
   container-type: size;
@@ -130,7 +111,7 @@ em { font-style: italic; }
   position: relative;
   text-align: center;
   padding: 0 var(--gutter);
-  will-change: transform, opacity;
+  will-change: transform;
 }
 .hero__title {
   margin: 0;
@@ -139,50 +120,8 @@ em { font-style: italic; }
   font-size: clamp(3rem, 9vw, 8.5rem);
   line-height: 0.95;
 }
-
-/* Drifting cloud layers: they start low, peeking over the bottom of the
-   video, and rise at different speeds as you scroll */
-.hero__cloud,
-.hero__mist {
-  position: absolute;
-  left: 50%;
-  pointer-events: none;
-  will-change: transform;
-}
-.hero__cloud {
-  top: 0;
-  width: 150%; /* pushes the PNG's thinner corners off-screen */
-  height: 100%;
-}
-.hero__cloud--back  { transform: translate3d(-50%, 62%, 0) scaleX(-1); opacity: 0.75; }
-.hero__cloud--front { transform: translate3d(-50%, 58%, 0);}
-.hero__cloud img,
-.hero__mist img {
-  display: block;
-  width: 100%;
-  max-width: none;
-  height: 100%;
-  filter: url(#cloud-tint);
-}
-
-/* Mist curtain: anchored to the bottom and flattened to nothing, it stands up
-   to full height as you scroll, covering the video in the page colour */
-.hero__mist {
-  bottom: -24px; /* hides the soft edge the blur leaves at the bottom */
-  width: 130%;
-  height: calc(100% + 24px);
-  transform-origin: bottom;
-  transform: translate3d(-50%, 0, 0) scaleY(0);
-}
-/* Solid base so the mist is fully opaque where it meets the intro */
-.hero__mist img {
-  background: linear-gradient(0deg, #fff 0%, transparent 18%);
-}
-
 .hero__scroll {
   position: absolute;
-  z-index: 3;
-  color: var(--ink);
   bottom: 32px;
   left: 50%;
   transform: translateX(-50%);
@@ -210,107 +149,18 @@ em { font-style: italic; }
 
 /* ---------- Intro ---------- */
 .intro {
-  position: relative;
-  background: #f5f3ef;
-}
-.intro__inner {
   max-width: 980px;
   margin: 0 auto;
-  margin-top: -5vw;
   padding: clamp(96px, 16vw, 200px) var(--gutter);
-  padding-top: 0;
-  padding-bottom: 5vw;
   text-align: center;
 }
-
-/* Three cards, the middle one larger, centred against each other */
-.intro__cards {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: clamp(12px, 2.4vw, 24px);
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 var(--gutter) clamp(96px, 14vw, 180px);
-}
-.icard {
-  position: relative;
-  flex: 0 1 300px;
-  aspect-ratio: 300 / 390;
-  overflow: hidden;
-  border-radius: 12px;
-  display: grid;
-  place-items: center;
-  color: #fff;
-  background: var(--dark);
-  /* Scroll position sets the target; the transition smooths the steps
-     between mouse-wheel ticks */
-  transition: transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1), opacity 0.6s ease;
-  will-change: transform, opacity;
-}
-.icard--center {
-  flex-basis: 360px;
-  aspect-ratio: 360 / 480;
-  z-index: 1;
-}
-.icard__img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.icard::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  background: rgba(10, 14, 20, 0.42);
-}
-.icard__title {
-  position: relative;
-  z-index: 2;
+.intro__text {
   margin: 0;
-  padding: 0 1rem;
-  text-align: center;
-  font-family: var(--sans);
-  font-weight: 600;
-  font-size: clamp(1.15rem, 2vw, 1.6rem);
+  font-family: var(--serif);
+  font-size: clamp(1.6rem, 3.6vw, 3rem);
   line-height: 1.2;
 }
-.icard--center .icard__title { font-size: clamp(1.3rem, 2.5vw, 2rem); }
 
-.icard__pill {
-  position: absolute;
-  z-index: 2;
-  left: 1.25rem;
-  right: 1.25rem;
-  bottom: 1.25rem;
-  display: flex;
-  align-items: center;
-  gap: 0.85rem;
-  padding: 0.65rem 0.9rem;
-  border-radius: 6px;
-  background: #fff;
-  color: var(--ink);
-}
-.icard__pill p {
-  margin: 0;
-  font-size: 0.72rem;
-  font-weight: 400;
-  line-height: 1.4;
-}
-.icard__icon {
-  flex: none;
-  display: grid;
-  place-items: center;
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  background: var(--accent);
-  color: #fff;
-}
-.icard__icon svg { width: 16px; height: 16px; }
 /* ---------- Our Camps (horizontal scroll) ---------- */
 .camps {
   position: relative;
@@ -641,22 +491,12 @@ em { font-style: italic; }
   .trips__panels { flex-direction: column; height: 88vh; }
   .trip.is-active { flex-grow: 6; }
   .trip__content { width: 100%; }
-
-  /* Cards stack on phones, middle card first */
-  .intro__cards { flex-direction: column; }
-  .icard,
-  .icard--center { flex-basis: auto; width: min(100%, 360px); }
-  .icard--center { order: -1; }
   .trip__img { width: 100%; height: max(100%, 56vh); top: 50%; left: 0; transform: translateY(-50%) scale(1.15); }
   .trip.is-active .trip__img { transform: translateY(-50%) scale(1); }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .hero__scroll::after { animation: none; }
-  /* No pinned mist sequence: a single-screen hero with the clouds at rest */
-  .hero { height: auto; }
-  .hero__mist { display: none; }
   .camp__body > * { transition: none; }
   .trip, .trip__img, .trip::after, .trip__content > * { transition: none !important; }
-  .icard { transition: none; }
 }
