@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Polar Horizon</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header class="nav">
+    <a href="#" class="nav__logo">Polar Horizon</a>
+    <nav class="nav__links">
+      <a href="#camps">Our Camps</a>
+      <a href="#trips">Our Trips</a>
+      <a href="#contact">Enquire</a>
+    </nav>
+  </header>
+
+  <!-- HERO: vertical parallax layers -->
+  <section class="hero">
+    <div class="hero__bg" data-speed="0.4"
+         style="background-image:url('https://images.unsplash.com/photo-1519681393784-d120267933ba?w=2400&q=80')"></div>
+    <div class="hero__shade"></div>
+    <div class="hero__content" data-speed="-0.15">
+      <p class="eyebrow">Expeditions to the edge of the world</p>
+      <h1 class="hero__title">Where the map<br /><em>runs out</em></h1>
+    </div>
+    <div class="hero__scroll">Scroll</div>
+  </section>
+
+  <!-- INTRO -->
+  <section class="intro" id="about">
+    <p class="eyebrow">Since 2006</p>
+    <p class="intro__text">
+      Five remote camps, each set against a landscape few people will ever see.
+      Scroll down to travel east across the ice.
+    </p>
+  </section>
+
+  <!-- OUR CAMPS: vertical scroll drives horizontal movement -->
+  <section class="camps" id="camps">
+    <div class="camps__sticky">
+      <div class="camps__track">
+
+        <div class="camps__intro">
+          <p class="eyebrow">Our Camps</p>
+          <h2 class="camps__heading">Five homes<br />on the <em>ice</em></h2>
+          <p class="camps__lede">Each camp is a base for a different kind of wilderness, from glacier ridges to frozen coastlines.</p>
+        </div>
+
+        <article class="camp">
+          <div class="camp__media">
+            <img src="https://images.unsplash.com/photo-1531366936337-7c912a4589a7?w=1600&q=80" alt="Green aurora over a snowy valley" />
+          </div>
+          <div class="camp__body">
+            <span class="camp__num">01</span>
+            <h3 class="camp__name">Aurora Camp</h3>
+            <p class="camp__desc">Glass-roofed pods under the northern lights, a short sled ride from the fjord.</p>
+          </div>
+        </article>
+
+        <article class="camp">
+          <div class="camp__media">
+            <img src="https://images.unsplash.com/photo-1517783999520-f068d7431a60?w=1600&q=80" alt="King penguin on a shore at sunrise" />
+          </div>
+          <div class="camp__body">
+            <span class="camp__num">02</span>
+            <h3 class="camp__name">Emperor Shore</h3>
+            <p class="camp__desc">A coastal outpost beside one of the largest penguin colonies on the continent.</p>
+          </div>
+        </article>
+
+        <article class="camp">
+          <div class="camp__media">
+            <img src="https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?w=1600&q=80" alt="Snow-capped peaks at dusk" />
+          </div>
+          <div class="camp__body">
+            <span class="camp__num">03</span>
+            <h3 class="camp__name">Summit Ridge</h3>
+            <p class="camp__desc">High-altitude domes for climbers, perched below an unnamed granite spire.</p>
+          </div>
+        </article>
+
+        <article class="camp">
+          <div class="camp__media">
+            <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1600&q=80" alt="Mountains rising above a sea of clouds" />
+          </div>
+          <div class="camp__body">
+            <span class="camp__num">04</span>
+            <h3 class="camp__name">Cloud Line</h3>
+            <p class="camp__desc">Wake above the weather, with the valley hidden under a sea of cloud.</p>
+          </div>
+        </article>
+
+        <article class="camp">
+          <div class="camp__media">
+            <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1600&q=80" alt="Turquoise alpine lake with a wooden boat" />
+          </div>
+          <div class="camp__body">
+            <span class="camp__num">05</span>
+            <h3 class="camp__name">Glacier Lake</h3>
+            <p class="camp__desc">A summer lodge on meltwater so clear you can see the stones beneath the boats.</p>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="camps__progress" aria-hidden="true">
+        <span class="camps__count"><b class="js-count">01</b> / 05</span>
+        <div class="camps__bar"><i class="js-bar"></i></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OUR TRIPS: hover a panel to expand it -->
+  <section class="trips" id="trips">
+    <div class="trips__head">
+      <p class="eyebrow">Our Trips</p>
+      <h2 class="trips__heading">Journeys for the <em>curious</em></h2>
+    </div>
+
+    <div class="trips__panels">
+      <article class="trip is-active" tabindex="0">
+        <img class="trip__img" src="https://images.unsplash.com/photo-1517783999520-f068d7431a60?w=2000&q=80" alt="King penguin on a shore at sunrise" />
+        <div class="trip__content">
+          <div class="trip__top">
+            <h3 class="trip__title">Penguin Coast<br />&amp; Blue Ice</h3>
+            <a href="#" class="trip__link">Learn more <span>+</span></a>
+          </div>
+          <div class="trip__bottom">
+            <p class="trip__meta"><span>US $68,500</span><span>Early Season</span></p>
+            <p class="trip__desc">Walk among a colony of king penguins at first light, then explore glacier caves carved in blue ice.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="trip" tabindex="0">
+        <img class="trip__img" src="https://images.unsplash.com/photo-1531366936337-7c912a4589a7?w=2000&q=80" alt="Green aurora over a snowy valley" />
+        <div class="trip__content">
+          <div class="trip__top">
+            <h3 class="trip__title">Northern<br />Lights Week</h3>
+            <a href="#" class="trip__link">Learn more <span>+</span></a>
+          </div>
+          <div class="trip__bottom">
+            <p class="trip__meta"><span>US $24,900</span><span>Winter</span></p>
+            <p class="trip__desc">Seven nights in glass-roofed pods, with dog sledding by day and the aurora overhead by night.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="trip" tabindex="0">
+        <img class="trip__img" src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=2000&q=80" alt="Turquoise alpine lake with a wooden boat" />
+        <div class="trip__content">
+          <div class="trip__top">
+            <h3 class="trip__title">Glacier Lakes<br />by Boat</h3>
+            <a href="#" class="trip__link">Learn more <span>+</span></a>
+          </div>
+          <div class="trip__bottom">
+            <p class="trip__meta"><span>US $18,750</span><span>Summer</span></p>
+            <p class="trip__desc">Row across clear meltwater lakes and hike between lodges beneath limestone peaks.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="trip" tabindex="0">
+        <img class="trip__img" src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=2000&q=80" alt="Mountains rising above a sea of clouds" />
+        <div class="trip__content">
+          <div class="trip__top">
+            <h3 class="trip__title">Above the<br />Clouds</h3>
+            <a href="#" class="trip__link">Learn more <span>+</span></a>
+          </div>
+          <div class="trip__bottom">
+            <p class="trip__meta"><span>US $41,200</span><span>Late Season</span></p>
+            <p class="trip__desc">A guided ascent to a high ridge camp, timed for sunrise over a sea of cloud.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="trip" tabindex="0">
+        <img class="trip__img" src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=2000&q=80" alt="Forested valley below snowy mountains" />
+        <div class="trip__content">
+          <div class="trip__top">
+            <h3 class="trip__title">Wild Valley<br />Traverse</h3>
+            <a href="#" class="trip__link">Learn more <span>+</span></a>
+          </div>
+          <div class="trip__bottom">
+            <p class="trip__meta"><span>US $15,300</span><span>All Year</span></p>
+            <p class="trip__desc">Follow old trapper routes through spruce forest to a remote mountain lake.</p>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- BREAK: vertical parallax image -->
+  <section class="breaker">
+    <div class="breaker__bg" data-speed="0.3"
+         style="background-image:url('https://images.unsplash.com/photo-1478265409131-1f65c88f965c?w=2000&q=80')"></div>
+    <h2 class="breaker__title" data-speed="-0.1">Cold, quiet,<br /><em>unforgettable</em></h2>
+  </section>
+
+  <footer class="footer" id="contact">
+    <p class="eyebrow">Start planning</p>
+    <h2 class="footer__title">Your expedition begins here</h2>
+    <a href="#" class="btn">Enquire now</a>
+    <p class="footer__small">© 2026 Polar Horizon. Demo site.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
