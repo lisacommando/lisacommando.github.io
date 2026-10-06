@@ -94,6 +94,45 @@
 
   measure();
 
+  // ---------- Hero: muted, looping YouTube background video ----------
+  const videoBg = document.querySelector("[data-youtube]");
+  if (videoBg && !reduceMotion) {
+    const videoId = videoBg.dataset.youtube;
+
+    window.onYouTubeIframeAPIReady = () => {
+      new YT.Player("hero-video", {
+        videoId,
+        playerVars: {
+          autoplay: 1,
+          mute: 1,
+          controls: 0,
+          loop: 1,
+          playlist: videoId, // required for loop to work on a single video
+          playsinline: 1,
+          rel: 0,
+          modestbranding: 1,
+          disablekb: 1,
+          iv_load_policy: 3,
+        },
+        events: {
+          onReady: (e) => {
+            e.target.mute();
+            e.target.playVideo();
+          },
+          // Fade the video in only once it is actually playing, so the poster
+          // covers YouTube's loading screen.
+          onStateChange: (e) => {
+            if (e.data === YT.PlayerState.PLAYING) videoBg.classList.add("is-playing");
+          },
+        },
+      });
+    };
+
+    const api = document.createElement("script");
+    api.src = "https://www.youtube.com/iframe_api";
+    document.head.appendChild(api);
+  }
+
   // ---------- Our Trips: expand the hovered / tapped / focused panel ----------
   const trips = [...document.querySelectorAll(".trip")];
   const canHover = window.matchMedia("(hover: hover)").matches;

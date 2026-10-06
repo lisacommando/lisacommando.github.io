@@ -80,6 +80,28 @@ em { font-style: italic; }
   background-position: center;
   will-change: transform;
 }
+/* YouTube background video, sized to cover like background-size: cover */
+.hero__bg--video {
+  container-type: size;
+  overflow: hidden;
+}
+.hero__video,
+.hero__video iframe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: max(100cqw, 177.78cqh);
+  height: max(56.25cqw, 100cqh);
+  /* Slight zoom crops YouTube's edge UI and any letterboxing */
+  transform: translate(-50%, -50%) scale(1.15);
+  border: 0;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 1.2s ease;
+}
+.hero__video iframe { transform: none; top: 0; left: 0; width: 100%; height: 100%; opacity: 1; }
+.hero__bg--video.is-playing .hero__video { opacity: 1; }
+
 .hero__shade {
   position: absolute;
   inset: 0;

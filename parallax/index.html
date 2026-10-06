@@ -22,8 +22,11 @@
 
   <!-- HERO: vertical parallax layers -->
   <section class="hero">
-    <div class="hero__bg" data-speed="0.4"
-         style="background-image:url('https://images.unsplash.com/photo-1519681393784-d120267933ba?w=2400&q=80')"></div>
+    <!-- Poster image shows until the YouTube video starts playing -->
+    <div class="hero__bg hero__bg--video" data-speed="0.4" data-youtube="EColTNIbOko"
+         style="background-image:url('https://i.ytimg.com/vi/EColTNIbOko/maxresdefault.jpg')">
+      <div class="hero__video"><div id="hero-video"></div></div>
+    </div>
     <div class="hero__shade"></div>
     <div class="hero__content" data-speed="-0.15">
       <p class="eyebrow">Expeditions to the edge of the world</p>
