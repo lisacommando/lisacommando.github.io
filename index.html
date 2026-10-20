@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>R&D Environment | Snippets</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Prism.js CSS (Tomorrow Night Theme + Toolbar) -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/toolbar/prism-toolbar.min.css" rel="stylesheet" />
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a; /* Tailwind slate-900 */
+        }
+        
+        /* Custom Overrides for Prism.js to fit the modern theme */
+        pre[class*="language-"] {
+            margin: 0 !important;
+            padding: 1.5rem !important;
+            background: #1e293b !important; /* Tailwind slate-800 */
+            border-radius: 0 0 0.75rem 0.75rem;
+            font-family: 'JetBrains Mono', monospace !important;
+            font-size: 0.875rem !important;
+            box-shadow: inset 0 2px 4px 0 rgb(0 0 0 / 0.05);
+        }
+        
+        code[class*="language-"], pre[class*="language-"] {
+            text-shadow: none !important;
+        }
+
+        /* Styling the Prism Toolbar (Copy Button) */
+        div.code-toolbar > .toolbar {
+            opacity: 1 !important;
+            top: 0.5rem !important;
+            right: 0.5rem !important;
+        }
+        
+        div.code-toolbar > .toolbar a,
+        div.code-toolbar > .toolbar button,
+        div.code-toolbar > .toolbar span {
+            background-color: #334155 !important; /* Tailwind slate-700 */
+            color: #e2e8f0 !important; /* Tailwind slate-200 */
+            border-radius: 0.375rem !important;
+            padding: 0.25rem 0.75rem !important;
+            font-family: 'Inter', sans-serif !important;
+            font-size: 0.75rem !important;
+            font-weight: 500 !important;
+            transition: all 0.2s ease;
+            box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+        }
+
+        div.code-toolbar > .toolbar a:hover,
+        div.code-toolbar > .toolbar button:hover,
+        div.code-toolbar > .toolbar span:hover {
+            background-color: #475569 !important; /* Tailwind slate-600 */
+            color: #ffffff !important;
+            cursor: pointer;
+        }
+        
+        /* Custom Scrollbar for code blocks */
+        pre[class*="language-"]::-webkit-scrollbar {
+            height: 8px;
+            width: 8px;
+        }
+        pre[class*="language-"]::-webkit-scrollbar-track {
+            background: #1e293b;
+            border-radius: 4px;
+        }
+        pre[class*="language-"]::-webkit-scrollbar-thumb {
+            background: #475569;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="text-slate-300 min-h-screen flex flex-col selection:bg-cyan-500/30">
+
+    <!-- Navigation / Header -->
+    <header class="border-b border-slate-800 bg-slate-900/50 backdrop-blur-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <svg class="w-6 h-6 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
+                <span class="font-bold text-white text-lg tracking-wide">R&D<span class="text-slate-500 font-light">Hub</span></span>
+            </div>
+            <nav class="hidden md:flex gap-6 text-sm font-medium">
+                <a href="#css" class="hover:text-cyan-400 transition-colors">CSS</a>
+                <a href="#js" class="hover:text-amber-400 transition-colors">JavaScript</a>
+                <a href="#squarespace" class="hover:text-emerald-400 transition-colors">Squarespace</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 w-full">
+        <!-- Hero Section -->
+        <section class="text-center py-16 md:py-24 max-w-3xl mx-auto">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-500/10 border border-rose-500/20 text-rose-400 text-xs font-semibold tracking-wide uppercase mb-6">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                Internal Use Only
+            </div>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight mb-6">
+                Research & <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">Development</span>
+            </h1>
+            <p class="text-lg md:text-xl text-slate-400 leading-relaxed mb-8">
+                This website is strictly for Research and Development purposes. It serves as an internal repository for tested code snippets, layout blocks, and technical documentation.
+            </p>
+        </section>
+
+        <!-- Category Grid Navigation -->
+        <section class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">
+            <!-- CSS Card -->
+            <a href="#css" class="group p-6 rounded-2xl bg-slate-800/50 border border-slate-700 hover:border-cyan-500/50 hover:bg-slate-800 transition-all duration-300">
+                <div class="w-12 h-12 rounded-lg bg-cyan-500/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                    <svg class="w-6 h-6 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path></svg>
+                </div>
+                <h3 class="text-xl font-semibold text-white mb-2">CSS Snippets</h3>
+                <p class="text-sm text-slate-400">Utility classes, background configurations, and responsive styling patterns.</p>
+            </a>
+            
+            <!-- JS Card -->
+            <a href="#js" class="group p-6 rounded-2xl bg-slate-800/50 border border-slate-700 hover:border-amber-500/50 hover:bg-slate-800 transition-all duration-300">
+                <div class="w-12 h-12 rounded-lg bg-amber-500/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                    <svg class="w-6 h-6 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                </div>
+                <h3 class="text-xl font-semibold text-white mb-2">JS Snippets</h3>
+                <p class="text-sm text-slate-400">Helper functions, event listeners, and DOM manipulation scripts.</p>
+            </a>
+
+            <!-- Squarespace Card -->
+            <a href="#squarespace" class="group p-6 rounded-2xl bg-slate-800/50 border border-slate-700 hover:border-emerald-500/50 hover:bg-slate-800 transition-all duration-300">
+                <div class="w-12 h-12 rounded-lg bg-emerald-500/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                    <svg class="w-6 h-6 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"></path></svg>
+                </div>
+                <h3 class="text-xl font-semibold text-white mb-2">Squarespace Blocks</h3>
+                <p class="text-sm text-slate-400">Custom CSS injections, structural overrides, and JSON configs.</p>
+            </a>
+        </section>
+    </main>
+</body>
+</html>
