@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Code Snippet</title>
+    <!-- Tailwind CSS for rapid styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <!-- Prism Core & Theme -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/toolbar/prism-toolbar.min.css">
+    <style>
+      body {
+        font-family: 'Inter', sans-serif;
+      }
+      .font-mono {
+        font-family: 'Fira Code', monospace;
+      }
+      /* Custom scrollbar for the code block */
+      .code-container::-webkit-scrollbar {
+        height: 8px;
+      }
+      .code-container::-webkit-scrollbar-track {
+        background: #1f2937; 
+        border-radius: 0 0 0.5rem 0.5rem;
+      }
+      .code-container::-webkit-scrollbar-thumb {
+        background: #4b5563; 
+        border-radius: 4px;
+      }
+      .code-container::-webkit-scrollbar-thumb:hover {
+        background: #6b7280; 
+      }
+      :not(pre)>code[class*=language-], pre[class*=language-] {
+        background: transparent;
+        padding: 20px;
+      }
+    </style>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen p-4 sm:p-8">
+
+<!-- Textarea Source -->
+<textarea id="rawCode" style="display:none;">
+// =======================================================
+//    CTA Image for oc-cta-03
+// ======================================================
+
+// tweak: {"category" : "CTA Images (oc-cta-03)","label": "Add CTA 1 Image", "type" : "image", "title" : "CTA 1", "showOnlyWhenPresent" : ".oc-cta-03-image01", "target" : ".oc-cta-03" }
+.oc-cta-03-image01 {
+  background-color: @primary;
+  background-image: url('assets/background-example.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+// tweak: {"category" : "CTA Images (oc-cta-03)","label": "Add CTA 2 Image", "type" : "image", "title" : "CTA 1", "showOnlyWhenPresent" : ".oc-cta-03-image02", "target" : ".oc-cta-03" }
+.oc-cta-03-image02 {
+  background-color: @primary;
+  background-image: url('assets/background-example.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+// tweak: {"category" : "CTA Images (oc-cta-03)","label": "Add CTA 3 Image", "type" : "image", "title" : "CTA 1", "showOnlyWhenPresent" : ".oc-cta-03-image03", "target" : ".oc-cta-03" }
+.oc-cta-03-image03 {
+  background-color: @primary;
+  background-image: url('assets/background-example.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+// tweak: {"category" : "CTA Images (oc-cta-03)","label": "Add CTA 4 Image", "type" : "image", "title" : "CTA 1", "showOnlyWhenPresent" : ".oc-cta-03-image04", "target" : ".oc-cta-03" }
+.oc-cta-03-image04 {
+  background-color: @primary;
+  background-image: url('assets/background-example.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+
+// =======================================================
+//    CTA Image for oc-cta-07
+// ======================================================
+
+// tweak: {"category" : "CTA Images (oc-cta-07)","label": "Add CTA 1 Image", "type" : "image", "title" : "CTA 1", "showOnlyWhenPresent" : ".oc-cta-07-image01", "target" : ".oc-cta-07" }
+.oc-cta-07-image01 {
+  background-color: @primary;
+  background-image: url('assets/background-example.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+// tweak: {"category" : "CTA Images (oc-cta-07)","label": "Add CTA 2 Image", "type" : "image", "title" : "CTA 2", "showOnlyWhenPresent" : ".oc-cta-07-image02", "target" : ".oc-cta-07" }
+.oc-cta-07-image02 {
+  background-color: @primary;
+  background-image: url('assets/background-example.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+// tweak: {"category" : "CTA Images (oc-cta-07)","label": "Add CTA 3 Image", "type" : "image", "title" : "CTA 3", "showOnlyWhenPresent" : ".oc-cta-07-image03", "target" : ".oc-cta-07" }
+.oc-cta-07-image03 {
+  background-color: @primary;
+  background-image: url('assets/background-example.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+// tweak: {"category" : "CTA Images (oc-cta-07)","label": "Add CTA 4 Image", "type" : "image", "title" : "CTA 4", "showOnlyWhenPresent" : ".oc-cta-07-image04", "target" : ".oc-cta-07" }
+.oc-cta-07-image04 {
+  background-color: @primary;
+  background-image: url('assets/background-example.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+</textarea>
+
+<div class="w-full max-w-8xl bg-white shadow-xl rounded-2xl overflow-hidden border border-gray-200">
+  <div class="p-6 md:p-8 border-b border-gray-100">
+    <h2 class="text-2xl font-semibold text-gray-800 mb-2">Squarespace Tweak Addition</h2>
+    <p class="text-gray-500 text-sm">Use this snippet to add to tweak.less in Squarespace template.</p>
+  </div>
+  <div class="p-6 md:p-8 bg-gray-50">
+    <div class="rounded-xl overflow-hidden shadow-2xl border border-gray-700 bg-gray-900">
+        <div class="flex items-center justify-between px-4 py-3 bg-gray-800 border-b border-gray-700">
+          <!-- Decorative Dots -->
+          <div class="flex space-x-2">
+              <div class="w-3 h-3 rounded-full bg-red-500"></div>
+              <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+              <div class="w-3 h-3 rounded-full bg-green-500"></div>
+          </div>
+          <!-- Language Label -->
+          <span class="text-xs font-medium text-gray-400 uppercase tracking-wider">CSS</span>
+
+          <!-- Copy Button -->
+          <button id="copy-button" onclick="copyCode()" class="flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-gray-300 bg-gray-700 hover:bg-gray-600 hover:text-white rounded-md transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-800">
+              <svg id="copy-icon" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+              </svg>
+              <span id="copy-text">Copy Code</span>
+          </button>
+        </div>
+        <!-- Target Code Display -->
+        <pre><code id="codeDisplay" class="language-css"></code></pre>
+    </div>
+  </div>
+</div>
+
+  <!-- Prism JS + Plugins -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/toolbar/prism-toolbar.min.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js"></script> -->
+
+  <script>
+    // Transfer raw textarea string into the <code> tag and highlight
+    const raw = document.getElementById('rawCode').value;
+    const target = document.getElementById('codeDisplay');
+    target.textContent = raw.trim();
+    Prism.highlightElement(target);
+  </script>
+
+  <!-- JavaScript for Copy Functionality -->
+  <script>
+    function copyCode() {
+        // Get the plain text code from the hidden textarea
+        const codeContent = document.getElementById('rawCode').value;
+        
+        // Create a temporary textarea to hold the text to copy
+        // This is required to use document.execCommand('copy') reliably
+        const tempTextArea = document.createElement('textarea');
+        tempTextArea.value = codeContent;
+        
+        // Move it off-screen to avoid visual flashing/scrolling
+        tempTextArea.style.position = 'absolute';
+        tempTextArea.style.left = '-9999px';
+        tempTextArea.style.top = '0';
+        
+        document.body.appendChild(tempTextArea);
+        
+        // Select and copy
+        tempTextArea.select();
+        tempTextArea.setSelectionRange(0, 99999); /* For mobile devices */
+        
+        let successful = false;
+        try {
+            successful = document.execCommand('copy');
+        } catch (err) {
+            console.error('Fallback: Oops, unable to copy', err);
+        }
+        
+        // Remove the temporary element
+        document.body.removeChild(tempTextArea);
+
+        // Provide UI Feedback
+        if (successful) {
+            const copyBtn = document.getElementById('copy-button');
+            const copyIcon = document.getElementById('copy-icon');
+            const copyText = document.getElementById('copy-text');
+            
+            // Original HTML states
+            const originalIconHTML = copyIcon.outerHTML;
+            const originalText = copyText.innerText;
+            const originalClasses = copyBtn.className;
+
+            // Success State (Checkmark)
+            copyBtn.className = "flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-green-400 bg-gray-700 rounded-md transition-all duration-200 focus:outline-none";
+            copyIcon.outerHTML = `<svg id="copy-icon" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>`;
+            copyText.innerText = "Copied!";
+
+            // Revert back after 2 seconds
+            setTimeout(() => {
+                const currentBtn = document.getElementById('copy-button');
+                currentBtn.className = originalClasses;
+                
+                const currentIconContainer = document.getElementById('copy-icon');
+                if(currentIconContainer) {
+                    currentIconContainer.outerHTML = originalIconHTML;
+                }
+                
+                const currentText = document.getElementById('copy-text');
+                if(currentText) {
+                    currentText.innerText = originalText;
+                }
+            }, 2000);
+        }
+    }
+  </script>
+</body>
+</html>
